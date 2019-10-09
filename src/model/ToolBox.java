@@ -41,10 +41,10 @@ private Owner ownerId;
  )
  	private List<Tool> toolsInToolBox;
 
-	public int getToolBId() {
+	public int getToolBoxId() {
 		return toolBoxId;
 	}
-	public void setId(int id) {
+	public void setToolBoxId(int id) {
 		this.toolBoxId = id;
 	}
 	public String getToolBoxName() {
