@@ -68,7 +68,7 @@ public class NavigateToolsServlet extends HttpServlet {
 			} 
 
 		} else if (act.equals("add")) {
-			getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+			getServletContext().getRequestDispatcher("/Index.html").forward(request, response);
 		}
 
 	}

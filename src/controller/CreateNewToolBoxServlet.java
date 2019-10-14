@@ -18,7 +18,7 @@ import model.Owner;
 /**
  * Servlet implementation class tbreateNewListServlet
  */
-@WebServlet("/createNewListServlet")
+@WebServlet("/CreateNewToolBoxServlet")
 public class CreateNewToolBoxServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -27,7 +27,6 @@ public class CreateNewToolBoxServlet extends HttpServlet {
 	 */
 	public CreateNewToolBoxServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -36,7 +35,6 @@ public class CreateNewToolBoxServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		ToolHelper th = new ToolHelper();
 		String toolBoxName = request.getParameter("toolBoxName");
 		System.out.println("ToolBox Name: " + toolBoxName);
@@ -72,7 +70,7 @@ public class CreateNewToolBoxServlet extends HttpServlet {
 		System.out.println("Success!");
 		System.out.println(tb.toString());
 
-		getServletContext().getRequestDispatcher("/viewAllToolBoxesServlet").forward(request, response);
+		getServletContext().getRequestDispatcher("/ViewAllToolBoxesServlet").forward(request, response);
 
 	}
 
@@ -82,7 +80,6 @@ public class CreateNewToolBoxServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

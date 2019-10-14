@@ -36,16 +36,16 @@ private Owner ownerId;
 @JoinTable
  (
 		 name="TOOLS_IN_TOOLBOX",
-		 joinColumns={ @JoinColumn(name="toolbox.TOOLBOX_ID", referencedColumnName="tools_in_toolbox.TOOLBOX_ID") },
-		 inverseJoinColumns={ @JoinColumn(name="toolbox.TOOL_ID", referencedColumnName="tools.TOOL_ID", unique=true) }
+		 joinColumns={ @JoinColumn(name="TOOLBOX_ID", referencedColumnName="TOOLBOX_ID") },
+		 inverseJoinColumns={ @JoinColumn(name="TOOL_IN_TOOLBOX_ID", referencedColumnName="TOOL_ID", unique=true) }
  )
  	private List<Tool> toolsInToolBox;
 
 	public int getToolBoxId() {
 		return toolBoxId;
 	}
-	public void setToolBoxId(int id) {
-		this.toolBoxId = id;
+	public void setToolBoxId(int toolBoxId) {
+		this.toolBoxId = toolBoxId;
 	}
 	public String getToolBoxName() {
 		return toolBoxName;
@@ -75,9 +75,9 @@ private Owner ownerId;
 		super();
 	}
 	
-	public ToolBox(int id, String toolBoxName, LocalDate dateAdded, Owner ownerId, List<Tool> toolsInToolBox) {
+	public ToolBox(int toolBoxId, String toolBoxName, LocalDate dateAdded, Owner ownerId, List<Tool> toolsInToolBox) {
 		super();
-		this.toolBoxId = id;
+		this.toolBoxId = toolBoxId;
 		this.toolBoxName = toolBoxName;
 		this.dateAdded = dateAdded;
 		this.ownerId = ownerId;

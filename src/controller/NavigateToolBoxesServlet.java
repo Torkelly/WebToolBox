@@ -28,7 +28,6 @@ public class NavigateToolBoxesServlet extends HttpServlet {
 	 */
 	public NavigateToolBoxesServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -37,12 +36,10 @@ public class NavigateToolBoxesServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		ToolBoxHelper tbh = new ToolBoxHelper();
 		String act = request.getParameter("doThisToTool");
 
 		if (act == null) {
-			// no button has been selected
 			getServletContext().getRequestDispatcher("/ViewAllToolBoxesServlet").forward(request, response);
 
 		} else if (act.equals("delete")) {
@@ -54,7 +51,7 @@ public class NavigateToolBoxesServlet extends HttpServlet {
 			} catch (NumberFormatException e) {
 				System.out.println("Forgot to click a button");
 			} finally {
-				getServletContext().getRequestDispatcher("/viewAllListsServlet").forward(request, response);
+				getServletContext().getRequestDispatcher("/ViewAllToolBoxesServlet").forward(request, response);
 			}
 
 		} else if (act.equals("edit")) {
@@ -68,13 +65,11 @@ public class NavigateToolBoxesServlet extends HttpServlet {
 				System.out.println("----After removing items-------");
 				for (int i = 0; i < allTools.size(); i++) {
 					for (int j = 0; j < currentToolsInToolBox.size(); j++) {
-						if (allTools.get(i).getId() == currentToolsInToolBox.get(j).getId()) {
+						if (allTools.get(i).getToolId() == currentToolsInToolBox.get(j).getToolId()) {
 							allTools.remove(i);
 						}
 					}
 				}
-
-
 
 				request.setAttribute("toolBoxToEdit", toolBoxToEdit);
 				request.setAttribute("allToolsToAdd", allTools);
@@ -95,7 +90,6 @@ public class NavigateToolBoxesServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

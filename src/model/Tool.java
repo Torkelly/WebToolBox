@@ -14,7 +14,7 @@ public class Tool {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "TOOL_ID")
-	private int toolID;
+	private int toolId;
 	@Column(name="TOOL_NAME")
 	private String toolName;
 	
@@ -22,9 +22,9 @@ public class Tool {
 		super();
 	}
 	
-	public Tool(int id, String toolName) {
+	public Tool(int toolId, String toolName) {
 		super();
-		this.toolID = id;
+		this.toolId = toolId;
 		this.toolName = toolName;
 	}
 	
@@ -33,12 +33,12 @@ public class Tool {
 		this.toolName = toolName;
 	}
 
-	public int getId() {
-		return toolID;
+	public int getToolId() {
+		return toolId;
 	}
 
-	public void setId(int id) {
-		this.toolID = id;
+	public void setToolId(int toolId) {
+		this.toolId = toolId;
 	}
 
 	public String getToolName() {
@@ -51,6 +51,6 @@ public class Tool {
 	
 	@Override
 	public String toString() {
-	    return "Tool [id=" + toolID + ", toolName=" + toolName + "]";
+	    return "Tool [id=" + toolId + ", toolName=" + toolName + "]";
 	}
 }

@@ -37,20 +37,19 @@ public class EditToolsServlet  extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		ToolHelper dao = new ToolHelper();
 		
 		String toolName = request.getParameter("toolName");
 		int toolId = Integer.parseInt(request.getParameter("toolId"));
-		Integer tempId = Integer.parseInt(request.getParameter("id"));
+		Integer tempId = Integer.parseInt(request.getParameter("toolId"));
 				
 		Tool itemToUpdate = dao.searchForToolById(tempId);
 		itemToUpdate.setToolName(toolName);
-		itemToUpdate.setId(toolId);
+		itemToUpdate.setToolId(toolId);
 				
 		dao.updateTool(itemToUpdate);
 
-		getServletContext().getRequestDispatcher("/viewAllItemsServlet").forward(request, response);
+		getServletContext().getRequestDispatcher("/ViewAllToolsServlet").forward(request, response);
 
 
 	}
