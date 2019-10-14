@@ -23,7 +23,7 @@ Available Tools:<br />
 <br />
 <input type = "submit" value="Create ToolBox and Add Tools">
 </form>
-<a href = "index.html">Add new tools instead</a>
+<a href = "Index.html">Add new tools instead</a>
 </body>
 
 </html>

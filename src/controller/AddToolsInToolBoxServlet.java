@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class addBoxesForListServlet
  */
-@WebServlet("/addBoxesForListServlet")
+@WebServlet("/AddToolsInToolBoxServlet")
 public class AddToolsInToolBoxServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -27,7 +27,7 @@ public class AddToolsInToolBoxServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ToolHelper th = new ToolHelper();
 		
-		request.setAttribute("allBoxes", th.showAllTools());
+		request.setAttribute("allTools", th.showAllTools());
 					
 		if(th.showAllTools().isEmpty()){
 				request.setAttribute("allTools", " ");

@@ -5,14 +5,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Toolboxes</title>
+<title>ToolBoxes</title>
 </head>
 <body>
-<form method = "post" action = "NavigationToolsServlet">
+<form method = "post" action = "NavigateToolsServlet">
     <table>
         <c:forEach items="${requestScope.allTools}" var="currentTool">
             <tr>
-                <td><input type="radio" name="id" value="${currentTool.toolId}"></td>
+                <td><input type="radio" name="toolId" value="${currentTool.toolId}"></td>
                 <td>${currentTool.toolName}</td>
             </tr>
         </c:forEach>

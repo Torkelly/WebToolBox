@@ -14,7 +14,7 @@ public class Owner {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "OWNER_ID")
-	private int ownerID;
+	private int ownerId;
 	@Column(name="OWNER_NAME")
 	private String ownerName;
 	
@@ -22,9 +22,9 @@ public class Owner {
 		super();
 	}
 	
-	public Owner(int id, String ownerName) {
+	public Owner(int ownerId, String ownerName) {
 		super();
-		this.ownerID = id;
+		this.ownerId = ownerId;
 		this.ownerName = ownerName;
 	}
 	
@@ -33,12 +33,12 @@ public class Owner {
 		this.ownerName = ownerName;
 	}
 
-	public int getId() {
-		return ownerID;
+	public int getOwnerId() {
+		return ownerId;
 	}
 
-	public void setId(int id) {
-		this.ownerID = id;
+	public void setOwnerId(int ownerId) {
+		this.ownerId = ownerId;
 	}
 
 	public String getOwnerName() {
@@ -51,6 +51,6 @@ public class Owner {
 	
 	@Override
 	public String toString() {
-	    return "Owner [id=" + ownerID + ", ownerName=" + ownerName + "]";
+	    return "Owner [id=" + ownerId + ", ownerName=" + ownerName + "]";
 	}
 }

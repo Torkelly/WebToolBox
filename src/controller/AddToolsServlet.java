@@ -22,22 +22,19 @@ public class AddToolsServlet extends HttpServlet {
 	 */
 	public AddToolsServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//int toolID = Integer.parseInt(request.getParameter("toolID"));
 		String toolName = request.getParameter("toolName");
 		
 		Tool ti = new Tool(toolName);
 		ToolHelper dao = new ToolHelper();
 		dao.insertTool(ti);
 		
-		getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+		getServletContext().getRequestDispatcher("/Index.html").forward(request, response);
 
 	}
 

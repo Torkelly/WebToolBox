@@ -9,17 +9,17 @@
 </head>
 <body>
 <body>
-<form method = "post" action = "NavigationToolBoxesServlet">
+<form method = "post" action = "NavigateToolBoxesServlet">
 <table>
 <c:forEach items="${requestScope.allToolBoxes}" var="currentToolBox">
 <tr>
-   <td><input type="radio" name="toolBoxId" value="${currentList.toolBoxId}"></td>
+   <td><input type="radio" name="toolBoxId" value="${currentToolBox.toolBoxId}"></td>
    <td><h2>${currentToolBox.toolBoxName}</h2></td></tr>
-   <tr><td colspan="3">Date Added: ${currentList.dateAdded}</td></tr>
-   <tr><td colspan="3">Owner: ${currentList.owner.ownerName}</td></tr>
+   <tr><td colspan="3">Date Added: ${currentToolBox.dateAdded}</td></tr>
+   <tr><td colspan="3">Owner: ${currentToolBox.owner.ownerName}</td></tr>
    <c:forEach var = "toolBoxVal" items = "${currentToolBox.toolsInToolBox}">
             <tr><td></td><td colspan="3">
-                ${toolBoxVal.toolBoxName}
+                ${toolBoxVal.toolName}
                 </td>
             </tr>
   </c:forEach>
@@ -29,8 +29,8 @@
 <input type = "submit" value = "delete" name="doThisToTool">
 <input type="submit" value = "add" name = "doThisToTool">
 </form>
-<a href="addBoxesForListServlet">Create a new ToolBox</a>
-<a href="index.html">Insert a new Tool</a>
+<a href="AddToolsInToolBoxServlet">Create a new ToolBox</a><br>
+<a href="Index.html">Insert a new Tool</a>
 </body>
 
 </body>

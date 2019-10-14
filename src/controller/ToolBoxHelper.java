@@ -36,8 +36,8 @@ public class ToolBoxHelper {
 			
 			public void deleteToolBox(ToolBox listToDelete) {
 				EntityManager em = emfactory.createEntityManager();
-				em.getTransaction().begin();
-				TypedQuery<ToolBox> typedQuery = em.createQuery("select tb from ToolBox tb where tb.toolBoxId = :selectedID", ToolBox.class);
+				em.getTransaction().begin();//ID or Id?
+				TypedQuery<ToolBox> typedQuery = em.createQuery("select tb from ToolBox tb where tb.toolBoxId = :selectedId", ToolBox.class);
 				typedQuery.setParameter("selectedId", listToDelete.getToolBoxId());
 			
 				typedQuery.setMaxResults(1);
