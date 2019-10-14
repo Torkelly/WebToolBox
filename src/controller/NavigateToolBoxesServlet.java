@@ -78,13 +78,13 @@ public class NavigateToolBoxesServlet extends HttpServlet {
 
 				request.setAttribute("toolBoxToEdit", toolBoxToEdit);
 				request.setAttribute("allToolsToAdd", allTools);
-				getServletContext().getRequestDispatcher("/EditTBox.jsp").forward(request, response);
+				getServletContext().getRequestDispatcher("/EditToolBox.jsp").forward(request, response);
 			} catch (NumberFormatException e) {
 				getServletContext().getRequestDispatcher("/ViewAllToolBoxesServlet").forward(request, response);
 			}
 
 		} else if (act.equals("add")) {
-			getServletContext().getRequestDispatcher("/addToolsForListServlet").forward(request, response);
+			getServletContext().getRequestDispatcher("/AddToolsInToolBoxServlet").forward(request, response);
 		}
 
 	}
